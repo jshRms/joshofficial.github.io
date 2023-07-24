@@ -38,7 +38,8 @@ nav {
     right: 0;
     top: 0;
     height: 80px;
-    background-color: rgba(0,32,44);
+    /*background-color: rgba(0,32,44);*/
+    background-color: #000;
     width: 100%;
     display: flex;
     padding: 20px;
@@ -162,7 +163,8 @@ nav .icon-burger .line {
         bottom: 100%;
         width: auto;
         height: auto;
-        background-color: rgb(0, 32, 44);
+        /*background-color: rgb(0, 32, 44);*/
+        background-color: #000;
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
@@ -219,10 +221,11 @@ nav .icon-burger .line {
 .hero {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0, 32, 44,0.9), rgba(0, 32, 44,0.9)), url(/background\ hero.png);
+    /*background: linear-gradient(rgba(0, 32, 44,0.9), rgba(0, 32, 44,0.9));
     background-position: center 30%;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    background-color: #000;
 }
 .hero > div {
     padding: 0 20px;
@@ -235,14 +238,16 @@ nav .icon-burger .line {
     gap: 10px;
 }
 .hero > div > h1 {
-    font-family: 'Anton', sans-serif;
-    font-size: 60px;
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 75px;
     color: #fff;
     text-align: center;
     width: 100%;
 }
 .hero > div > h1 > span {
     color: #38bcee;
+    font-size: 70px;
+    font-family: 'Anton', sans-serif;
 }
 .hero > div > a {
     background-color: transparent;
@@ -295,14 +300,19 @@ nav .icon-burger .line {
 }
 @media screen and (min-width: 800px) {
     .hero > div > h1 {
-        font-size: 80px;
+        font-size: 90px;
     }
     .hero > div > div {
         display: block;
     }
 }
-@media screen and (min-width: 1000px) {
-
+@media screen and (min-width: 1250px) {
+    .hero > div > h1 {
+        font-size: 95px;
+    }
+    .hero > div > h1 > span {
+        font-size: 75px;
+    }
 }
 /* end of hero section */
 /* About Me - section */
@@ -536,7 +546,8 @@ nav .icon-burger .line {
 }
 @media screen and (min-width: 1000px) {
     .certificates > div {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         max-width: 1200px;
         margin: 0 auto;
     }
@@ -558,69 +569,103 @@ nav .icon-burger .line {
     padding-top: 40px;
     margin-bottom: 10px;
 }
-.project > h3 {
+.project > div > h3 {
     text-align: center;
 }
-.project > div {
+.project > div > div {
     padding: 40px 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
-.project > div > div > a {
+.project > div > div:last-child {
+    width: 100%;
+}
+.project > div > div:last-child > div > h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.project > div > div:last-child > .frontEnd > div,
+.project > div > div:last-child > .dataVis > div,
+.project > div > div:last-child > .backEnd > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+.project > div > div:last-child > .frontEnd > div > a,
+.project > div > div:last-child > .dataVis > div > a,
+.project > div > div:last-child > .backEnd > div > a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: bold;
+    transition: .4s;
+}
+.project > div > div > div > a {
     width: fit-content;
     height: fit-content;
     text-decoration: none;
 }
-.project > div > div > a > img:hover {
+.project > div > div > div > a > img:hover {
     transform: scale(1.1);
     z-index: 2;
 }
-.project > div > div > a > img {
+.project > div > div > div > a > img {
     width: 100%;
     box-shadow: 0px 0px 10px 0px rgba(88, 88, 88, 0.75);
     transition: .4s;
 }
-.project > div > div > a > p {
+.project > div > div > div > a > p {
     text-align: center;
     margin-top: 10px;
     color: #000;
     font-weight: bold;
     transition: .4s;
 }
-.project > div > div > a > p:hover {
+.project > div > div > div > a > p:hover,
+.project > div > div:last-child > div > div > a:hover {
     color: #fff;
 }
 @media screen and (min-width: 600px) {
-    .project > div {
+    .project > div > div {
         max-width: 600px;
         margin: 0 auto;
     }
 }
 @media screen and (min-width: 900px) {
-    .project > div {
+    .project > div > div {
         max-width: 1200px;
         display: grid;
         grid-template-columns: repeat(2,1fr);
     }
-    .project > div > div > a > img {
+    .project > div > div > div > a > img {
         height: 300px;
         object-fit: cover;
         object-position: top;
     }
 }
 @media screen and (min-width: 1250px) {
-    .project > div {
+    .project > div > div {
         padding: 20px 0 60px 0;
         grid-template-columns: repeat(3,1fr);
         gap: 20px;
     }
-    .project > div > div > a > img {
+    .project > div > div > div > a > img {
         height: 250px;
     }
     .project > h2 {
         margin-bottom: 40px;
+    }
+    .project > div > div:last-child > .frontEnd > div,
+    .project > div > div:last-child > .dataVis > div,
+    .project > div > div:last-child > .backEnd > div {
+        gap: 20px;
+    }
+    .project > div > div:last-child > div > h3 {
+        margin-bottom: 30px;
     }
 }
 /* end of projects section */
@@ -705,7 +750,8 @@ nav .icon-burger .line {
 /* footer */
 footer {
     width: 100%;
-    background-color: rgb(0, 32, 44);
+    /*background-color: rgb(0, 32, 44);*/
+    background-color: #000;
 }
 footer > div {
     padding: 40px 20px;
